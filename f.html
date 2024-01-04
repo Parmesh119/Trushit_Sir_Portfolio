@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Content</title>
+    <style>
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="showContent('content1')">Button 1</button>
+<button onclick="showContent('content2')">Button 2</button>
+
+<div id="content1" class="content">
+    <p>This is the content for Button 1.</p>
+</div>
+
+<div id="content2" class="content">
+    <p>This is the content for Button 2.</p>
+</div>
+
+<script>
+    function showContent(contentId) {
+        // Hide all content divs
+        var allContents = document.querySelectorAll('.content');
+        for (var i = 0; i < allContents.length; i++) {
+            allContents[i].style.display = 'none';
+        }
+
+        // Show the selected content div
+        var selectedContent = document.getElementById(contentId);
+        if (selectedContent) {
+            selectedContent.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
